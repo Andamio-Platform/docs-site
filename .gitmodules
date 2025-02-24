@@ -1,0 +1,3 @@
+[submodule "node-sdk"]
+	path = node-sdk
+	url = git@github.com:Andamio-Platform/node-sdk.git

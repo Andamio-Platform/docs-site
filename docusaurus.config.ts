@@ -64,6 +64,33 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: ['node-sdk/src/index.ts'],
+        tsconfig: 'node-sdk/tsconfig.json',
+        out: 'docs/sdk',
+        sidebar: {
+          category: 'API Reference',
+          position: 2,
+          pretty: true
+        },
+        readme: "none",
+        indexFormat: "table",
+        disableSources: true,
+        groupOrder: ["Classes", "Interfaces", "Enums"],
+        textContentMappings: {
+          "title.indexPage": "SDK",
+          "title.memberPage": "{name}",
+        },
+        parametersFormat: "table",
+        enumMembersFormat: "table",
+        useCodeBlocks: true,
+      },
+    ],
+  ],
+  
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -78,7 +105,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
