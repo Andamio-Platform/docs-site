@@ -1,7 +1,9 @@
 # SDK
 
-## Classes
+## Modules
 
-| Class | Description |
+| Module | Description |
 | ------ | ------ |
-| [default](classes/default.md) | - |
+| [index](index/index.md) | - |
+| [indexer/core](indexer/core/index.md) | - |
+| [types](types/index.md) | - |
