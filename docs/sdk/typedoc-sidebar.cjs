@@ -46,16 +46,6 @@ const typedocSidebar = { items: [
               },
               {
                 "type": "doc",
-                "id": "sdk/indexer/core/classes/CoreCourse",
-                "label": "CoreCourse"
-              },
-              {
-                "type": "doc",
-                "id": "sdk/indexer/core/classes/Course",
-                "label": "Course"
-              },
-              {
-                "type": "doc",
                 "id": "sdk/indexer/core/classes/GlobalState",
                 "label": "GlobalState"
               },
