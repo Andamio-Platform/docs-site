@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "node-sdk/**"
+      - ".gitmodules"
       - "docs/**"
       - "docusaurus.config.ts"
       - ".github/workflows/deploy-docs.yml"
