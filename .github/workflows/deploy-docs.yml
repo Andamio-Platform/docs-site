@@ -6,6 +6,7 @@ on:
     paths:
       - "node-sdk/**"
       - "node-sdk.diff"
+      - "node-sdk"
       - ".gitmodules"
       - "docs/**"
       - "docusaurus.config.ts"
