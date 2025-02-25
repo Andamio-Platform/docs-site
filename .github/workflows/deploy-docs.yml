@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "node-sdk/**"
+      - "node-sdk.diff"
       - ".gitmodules"
       - "docs/**"
       - "docusaurus.config.ts"
