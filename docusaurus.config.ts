@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -71,21 +71,21 @@ const config: Config = {
       {
         entryPoints: [
           'node-sdk/src/index.ts',
-          
+
           'node-sdk/src/provider/*',
-          'node-sdk/src/provider/core/course/*',
-          'node-sdk/src/provider/core/course/assignment-state.ts',
-          'node-sdk/src/provider/core/course/course-state.ts',
-          'node-sdk/src/provider/core/course/module-ref.ts',
-          'node-sdk/src/provider/core/network/*',
-          'node-sdk/src/provider/core/network/alias-index.ts',
-          'node-sdk/src/provider/core/network/global-state.ts',
-          'node-sdk/src/provider/core/network/governance.ts',
-          'node-sdk/src/provider/core/network/instance.ts',
-          'node-sdk/src/provider/core/project/*',
-          'node-sdk/src/provider/core/project/contributor-state.ts',
-          'node-sdk/src/provider/core/project/escrow.ts',
-          'node-sdk/src/provider/core/project/treasury.ts',
+          // 'node-sdk/src/provider/core/course/*',
+          // 'node-sdk/src/provider/core/course/assignment-state.ts',
+          // 'node-sdk/src/provider/core/course/course-state.ts',
+          // 'node-sdk/src/provider/core/course/module-ref.ts',
+          // 'node-sdk/src/provider/core/network/*',
+          // 'node-sdk/src/provider/core/network/alias-index.ts',
+          // 'node-sdk/src/provider/core/network/global-state.ts',
+          // 'node-sdk/src/provider/core/network/governance.ts',
+          // 'node-sdk/src/provider/core/network/instance.ts',
+          // 'node-sdk/src/provider/core/project/*',
+          // 'node-sdk/src/provider/core/project/contributor-state.ts',
+          // 'node-sdk/src/provider/core/project/escrow.ts',
+          // 'node-sdk/src/provider/core/project/treasury.ts',
 
         ],
         tsconfig: 'node-sdk/tsconfig.json',
@@ -106,10 +106,18 @@ const config: Config = {
         parametersFormat: "table",
         enumMembersFormat: "table",
         useCodeBlocks: true,
+
+        // Add this option:
+        includeDeclarations: true,
+
+        // You might also want these:
+        excludeExternals: false,
+        excludePrivate: false,
+        excludeProtected: false,
       },
     ],
   ],
-  
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -126,7 +134,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
