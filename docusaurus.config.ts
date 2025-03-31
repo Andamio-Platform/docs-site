@@ -69,7 +69,25 @@ const config: Config = {
     [
       'docusaurus-plugin-typedoc',
       {
-        entryPoints: ['node-sdk/src/index.ts', 'node-sdk/src/provider/*'],
+        entryPoints: [
+          'node-sdk/src/index.ts',
+          
+          'node-sdk/src/provider/*',
+          'node-sdk/src/provider/core/course/*',
+          'node-sdk/src/provider/core/course/assignment-state.ts',
+          'node-sdk/src/provider/core/course/course-state.ts',
+          'node-sdk/src/provider/core/course/module-ref.ts',
+          'node-sdk/src/provider/core/network/*',
+          'node-sdk/src/provider/core/network/alias-index.ts',
+          'node-sdk/src/provider/core/network/global-state.ts',
+          'node-sdk/src/provider/core/network/governance.ts',
+          'node-sdk/src/provider/core/network/instance.ts',
+          'node-sdk/src/provider/core/project/*',
+          'node-sdk/src/provider/core/project/contributor-state.ts',
+          'node-sdk/src/provider/core/project/escrow.ts',
+          'node-sdk/src/provider/core/project/treasury.ts',
+
+        ],
         tsconfig: 'node-sdk/tsconfig.json',
         out: 'docs/sdk',
         sidebar: {
