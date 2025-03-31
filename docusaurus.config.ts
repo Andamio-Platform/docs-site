@@ -69,7 +69,7 @@ const config: Config = {
     [
       'docusaurus-plugin-typedoc',
       {
-        entryPoints: ['node-sdk/src/index.ts', 'node-sdk/src/provider/index.ts'],
+        entryPoints: ['node-sdk/src/index.ts', 'node-sdk/src/provider/*'],
         tsconfig: 'node-sdk/tsconfig.json',
         out: 'docs/sdk',
         sidebar: {
