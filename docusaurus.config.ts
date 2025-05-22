@@ -69,32 +69,21 @@ const config: Config = {
     [
       'docusaurus-plugin-typedoc',
       {
-        entryPoints: [
-          'node-sdk/src/index.ts',
-
-          'node-sdk/src/provider/*',
-          // 'node-sdk/src/provider/core/course/*',
-          // 'node-sdk/src/provider/core/course/assignment-state.ts',
-          // 'node-sdk/src/provider/core/course/course-state.ts',
-          // 'node-sdk/src/provider/core/course/module-ref.ts',
-          // 'node-sdk/src/provider/core/network/*',
-          // 'node-sdk/src/provider/core/network/alias-index.ts',
-          // 'node-sdk/src/provider/core/network/global-state.ts',
-          // 'node-sdk/src/provider/core/network/governance.ts',
-          // 'node-sdk/src/provider/core/network/instance.ts',
-          // 'node-sdk/src/provider/core/project/*',
-          // 'node-sdk/src/provider/core/project/contributor-state.ts',
-          // 'node-sdk/src/provider/core/project/escrow.ts',
-          // 'node-sdk/src/provider/core/project/treasury.ts',
-
-        ],
-        tsconfig: 'node-sdk/tsconfig.json',
+        // Create a mock directory for TypeDoc to use as a placeholder
+        // until the actual SDK code is available
+        entryPointStrategy: 'packages',
+        entryPoints: ['./'],
+        
+        // Output directory for generated docs
         out: 'docs/sdk',
+        
+        // Sidebar configuration using valid options
         sidebar: {
-          category: 'API Reference',
-          position: 2,
-          pretty: true
+          autoConfiguration: true,
+          pretty: true,
+          typescript: true
         },
+        
         readme: "none",
         indexFormat: "table",
         disableSources: true,
@@ -106,11 +95,11 @@ const config: Config = {
         parametersFormat: "table",
         enumMembersFormat: "table",
         useCodeBlocks: true,
-
-        // Add this option:
-        includeDeclarations: true,
-
-        // You might also want these:
+        
+        // Remove the unsupported option
+        // includeDeclarations: true,
+        
+        // Other valid options
         excludeExternals: false,
         excludePrivate: false,
         excludeProtected: false,
