@@ -1,65 +1,49 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Andamio Developers - Documentation',
-  tagline: 'Learn To Work',
-  favicon: 'img/favicon.ico',
+  title: "Andamio Developers - Documentation",
+  tagline: "Enabling Trust for Decentralized Work",
+  favicon: "img/andamio.png",
 
   // Set the production url of your site here
-  url: 'https://docs.andamio.io',
+  url: "https://docs.andamio.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs-site/',
+  baseUrl: "/docs-site/",
   trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Andamio-Platform', // Usually your GitHub org/user name.
-  projectName: 'docs-site', // Usually your repo name.
+  organizationName: "Andamio", // Usually your GitHub org/user name.
+  projectName: "andamio-documentation", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Andamio-Platform/docs-site',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Andamio-Platform/docs-site',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          // editUrl: "https://github.com/Andamio-Platform/docs-site",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -67,23 +51,23 @@ const config: Config = {
 
   plugins: [
     [
-      'docusaurus-plugin-typedoc',
+      "docusaurus-plugin-typedoc",
       {
         // Create a mock directory for TypeDoc to use as a placeholder
         // until the actual SDK code is available
-        entryPointStrategy: 'packages',
-        entryPoints: ['./'],
-        
+        entryPointStrategy: "packages",
+        entryPoints: ["./"],
+
         // Output directory for generated docs
-        out: 'docs/sdk',
-        
+        out: "docs/sdk",
+
         // Sidebar configuration using valid options
         sidebar: {
           autoConfiguration: true,
           pretty: true,
-          typescript: true
+          typescript: true,
         },
-        
+
         readme: "none",
         indexFormat: "table",
         disableSources: true,
@@ -95,10 +79,10 @@ const config: Config = {
         parametersFormat: "table",
         enumMembersFormat: "table",
         useCodeBlocks: true,
-        
+
         // Remove the unsupported option
         // includeDeclarations: true,
-        
+
         // Other valid options
         excludeExternals: false,
         excludePrivate: false,
@@ -108,73 +92,74 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // Set default theme to dark mode
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: 'My Site',
+      title: "Andamio Documentation",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: "Andamio Logo",
+        src: "img/andamio.png",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
+          type: "docSidebar",
+          sidebarId: "andamioSidebar",
+          position: "left",
+          label: "Docs",
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/andamio-platform",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Andamio",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: "Andamio Platform",
+              href: "https://app.andamio.io",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Connect",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "Discord",
+              href: "https://discordapp.com/invite/docusaurus",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: "X",
+              href: "https://x.com/docusaurus",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              href: "https://andamio.io/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "GitHub",
+              href: "https://github.com/andamio-platform",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Andamio. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
